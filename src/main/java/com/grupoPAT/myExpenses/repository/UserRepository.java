@@ -17,21 +17,7 @@ public interface UserRepository extends CrudRepository<User, String> {
 
     @Query("UPDATE USER SET USER.LAST_NAME= :lastname WHERE USER.USER_ID = :userId")
     public User updateLastName(User user,String userId);
-   /* @Query("SELECT * FROM USER WHERE USER.USER_ID = :user_id")
-    public Iterable <User> getUserById(String userId);
-
-    //query para actulizar la base de datos
-    @Modifying
-    @Query("UPDATE USER  SET PASSWORD = :password WHERE USERNAME = :username")
-    void updatePassword(@Param(value = "username") String username, @Param(value = "password") String password);
-
-    @Modifying
-    @Transactional
-    @Query("INSERT INTO USER (USERNAME, FIRST_NAME, LAST_NAME, PASSWORD) VALUES (:username, :firstname, :lastname, :password)")
-    void addUser(@Param(value = "username") String username, @Param(value = "firstname") String firstname, @Param(value = "lastname") String lastname, @Param(value = "password") String password);
-
-    @Query("DELETE FROM USER WHERE USER.USER_ID = :username")
-    public void deleteUser(String username);*/
+ 
 
     public void deleteUser(String id);
 }
