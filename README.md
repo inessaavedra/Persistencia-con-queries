@@ -1,1 +1,4 @@
 # Persistencia-con-queries
+JORGE BRETÓN DE LA CIERVA
+BEATRIZ SICILIA
+INES SAAVEDRA
