@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 //CLASE AÑADIDA
 
 
@@ -35,6 +37,19 @@ public class UserController {
         User user= serviceUser.getUserByUsername(username);
         return ResponseEntity.ok().body(user);
      
+    }
+    @Transactional
+    @GetMapping("/users/gender/{gender}")
+    public ResponseEntity<List<User>> getUserByGender(@PathVariable("gender") String gender){
+        List<User> usuarios= serviceUser.getUserByGender(gender);
+        return ResponseEntity.ok().body(usuarios);
+
+    }
+    @Transactional
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getUsers() {
+        List<User> usuarios = serviceUser.getUsers();
+        return ResponseEntity.ok().body(usuarios);
     }
     
     @PutMapping("/users/{id}/")

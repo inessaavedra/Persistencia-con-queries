@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 @Service
 public class ServiceUserImpl implements ServiceUser{
     
@@ -23,6 +27,18 @@ public class ServiceUserImpl implements ServiceUser{
      //   userRepository.deleteUser(idUser);
         
     //}
+    @Override
+    @Transactional
+    public List<User> getUsers() {
+        return StreamSupport.stream(userRepository.findAll().spliterator(), false).collect(Collectors.toUnmodifiableList());
+    }
+
+    @Override
+    @Transactional
+    public List<User> getUserByGender(String gender) {
+        return userRepository.getUserByGender(gender);
+    }
+
 
     @Override
     @Transactional
