@@ -5,7 +5,10 @@ import com.grupoPAT.myExpenses.model.User;
 import java.util.List;
 
 public interface ServiceUser {
-    
+
+    String addUser(String username, String first_name, String last_name, String contrasena,int estado);
+
+
     Iterable<User> getUser();
     List<User> getUsers();
     List<User> getUserByGender(String gender);

@@ -6,13 +6,7 @@ import com.grupoPAT.myExpenses.service.ServiceUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -51,7 +45,26 @@ public class UserController {
         List<User> usuarios = serviceUser.getUsers();
         return ResponseEntity.ok().body(usuarios);
     }
-    
+
+    @PostMapping("/add_user")
+    public @ResponseBody ResponseEntity<String> addUser(@RequestBody User usuario){
+        String username = usuario.getUsername();
+        String first_name = usuario.getFirst_name();
+        String last_name = usuario.getLast_name();
+        String gender = usuario.getGender();
+        String contrasena = usuario.getContrasena();
+        int estado = usuario.getEstado();
+        serviceUser.addUser(username, first_name, last_name, contrasena, estado);
+
+        return ResponseEntity.ok().body("Usuario incluido");
+
+    }
+
+
+
+
+
+
     @PutMapping("/users/{id}/")
     public ResponseEntity<User> updateLastName(@PathVariable String id, @RequestBody User user) {
         User newUser = serviceUser.updateLastName(id, user);
