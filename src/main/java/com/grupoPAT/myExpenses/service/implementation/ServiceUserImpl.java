@@ -14,15 +14,15 @@ public class ServiceUserImpl implements ServiceUser{
     @Autowired
     private UserRepository userRepository;
 
-    /*@Override
+    @Override
     public Iterable<User> getUser(){
         return userRepository.findAll();
     }
-    @Override
-    public void deleteUser(String idUser){
-        userRepository.deleteUser(idUser);
+    //@Override
+    //public void deleteUser(String idUser){
+     //   userRepository.deleteUser(idUser);
         
-    }*/
+    //}
 
     @Override
     @Transactional
@@ -35,17 +35,9 @@ public class ServiceUserImpl implements ServiceUser{
         return userRepository.updateLastName(user, id);
     }
 
-    @Override
-    public Iterable<User> getUser() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+   
 
-    @Override
-    public void deleteUser(String idUser) {
-        // TODO Auto-generated method stub
-        
-    }
+   
     
     
     

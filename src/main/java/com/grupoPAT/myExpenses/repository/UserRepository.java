@@ -19,7 +19,7 @@ public interface UserRepository extends CrudRepository<User, String> {
     public User updateLastName(User user,String userId);
  
 
-    public void deleteUser(String id);
+    //public void deleteUser(String id);
 }
 
 

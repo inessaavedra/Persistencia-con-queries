@@ -26,7 +26,7 @@ public class UserController {
 
     @Autowired
     private ServiceUser serviceUser;
-    @Autowired
+   @Autowired
     private UserRepository userRepository;
 
     @Transactional
@@ -36,6 +36,7 @@ public class UserController {
         return ResponseEntity.ok().body(user);
      
     }
+    
     @PutMapping("/users/{id}/")
     public ResponseEntity<User> updateLastName(@PathVariable String id, @RequestBody User user) {
         User newUser = serviceUser.updateLastName(id, user);
@@ -46,10 +47,10 @@ public class UserController {
     }
    
 
-    @DeleteMapping("/users/{id}")
+    /*@DeleteMapping("/users/{id}")
     public ResponseEntity<User> deleteUser(@PathVariable String id) {
         userRepository.deleteUser(id);
         return ResponseEntity.noContent().build();
-    }
+    }*/
 
 }
