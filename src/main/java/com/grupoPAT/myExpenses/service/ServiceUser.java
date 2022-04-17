@@ -1,5 +1,7 @@
 package com.grupoPAT.myExpenses.service;
 
+import com.grupoPAT.myExpenses.model.Gasto;
+import com.grupoPAT.myExpenses.model.Periodo;
 import com.grupoPAT.myExpenses.model.User;
 
 import java.util.List;

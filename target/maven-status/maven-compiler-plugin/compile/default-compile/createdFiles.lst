@@ -1,7 +1,9 @@
-com/grupoPAT/myExpenses/service/implementation/ServiceUserImpl.class
-com/grupoPAT/myExpenses/service/ServiceUser.class
-com/grupoPAT/myExpenses/MyExpensesApplication.class
-com/grupoPAT/myExpenses/model/User.class
-com/grupoPAT/myExpenses/repository/UserRepository.class
-com/grupoPAT/myExpenses/controller/UserController.class
-com/grupoPAT/myExpenses/model/User$UserBuilder.class
+com\grupoPAT\myExpenses\model\User.class
+com\grupoPAT\myExpenses\model\Periodo$PeriodoBuilder.class
+com\grupoPAT\myExpenses\repository\UserRepository.class
+com\grupoPAT\myExpenses\model\Grupo$GrupoBuilder.class
+com\grupoPAT\myExpenses\service\ServiceUser.class
+com\grupoPAT\myExpenses\service\implementation\ServiceUserImpl.class
+com\grupoPAT\myExpenses\MyExpensesApplication.class
+com\grupoPAT\myExpenses\controller\UserController.class
+com\grupoPAT\myExpenses\model\User$UserBuilder.class
